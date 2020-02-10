@@ -1,0 +1,84 @@
+* {
+    --primaryColor:#113d63;
+    --secondaryColor:gainsboro;
+    --tertiaryColor:#ff2800;
+  }
+/*------Button in the bottom--------*/
+.formField{
+    width: 90%;
+    margin-left:2%;
+    float:left;
+}
+
+#buttonAddTurma{
+    color:white;
+    background-color:var(--primaryColor);
+    border: 1px solid var(--secondaryColor);
+    height: 60px;
+    width: 60px;
+    font-size:2.2em;
+    border-radius: 50%;
+    outline:none;
+
+    margin-left:1%
+}
+/*-------------Tabela-----------------*/
+
+.buttonOp{
+    background: none;
+    margin-left: 0%;
+    padding:0%;
+    width:10%;
+    display:inline-block;
+   
+}
+.tdOperacao{
+    white-space: nowrap;
+    width: 20%;
+}
+.imgOp{
+    width:45%;
+    height:45%;
+}
+.mat-column-ementa{
+    width: 45%;
+    padding-left:4%;
+}
+.mat-column-operacoes{
+    width: 16%;
+}
+
+@media (max-width: 800px){
+    .formField{
+        width: 80%;
+    }
+    .mat-column-nome{
+        padding:2%;
+    }
+    .mat-column-periodo{
+        padding:2%;
+    }
+    .mat-column-nomeDisc{
+        padding:4%;
+    }
+    .mat-column-credito{
+        padding:2%;
+    }
+    .mat-column-ementa{
+        padding-left:8%;
+        width: 90%;
+    }
+    .buttonOp{
+        padding:6%;
+        width:5%;
+       
+    }
+    .tdOperacao{
+        width: 10%;
+    }
+    #buttonAddTurma{
+        height: 50px;
+        width: 50px;
+        font-size:1.8em;
+    }
+}

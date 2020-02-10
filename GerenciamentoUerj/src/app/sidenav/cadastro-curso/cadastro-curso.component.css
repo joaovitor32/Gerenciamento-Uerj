@@ -1,0 +1,49 @@
+.spacer {
+    flex: 1 1 auto;
+}
+.toolbarDialog{
+    background-color:#113d63;
+
+}
+.closeRef{
+    width: 4%;
+}
+.mat-dialog-content {
+    padding:0px;
+    margin-top:-8%;
+    height: 210px;
+    overflow-y: none!important;
+    overflow-x:none!important;
+}
+#labelCad{
+    color:white;
+    font-size:1.2em
+}
+.mat-form-field{
+    width: 94%;
+}
+.inputForms{
+    margin-left:6%;
+    
+}
+#buttonCad{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color:#113d63;
+    font-size:1.2em;
+    border:1px solid #113d63;
+}
+#buttonCad:hover{
+    transition:1s;
+    -o-transition:1s;
+    -moz-transition:1s;
+    -webkit-transition:1s;
+    color:gainsboro;
+    background-color:#113d63
+}
+@media (max-width: 800px){
+    .mat-dialog-content {
+        margin-top:-10%;
+    }
+  }

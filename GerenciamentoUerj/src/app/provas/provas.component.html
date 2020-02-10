@@ -1,0 +1,8 @@
+<div class="boxLoader" *ngIf="loading">
+    <app-load-spinner></app-load-spinner>
+</div>
+<div [ngStyle]="{'display': loading ? 'none':'block' }" id="boxProvas" >
+    <full-calendar (click)="addEvent($event)"  [events]="provas" [plugins]="calendarPlugins" #calendar  ></full-calendar>    
+</div>
+
+  

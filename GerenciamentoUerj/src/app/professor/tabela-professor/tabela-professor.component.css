@@ -1,0 +1,27 @@
+.buttonOp{
+    background: none;
+    margin-left: 0%;
+    padding:0%;
+    width:10%;
+    display:inline-block;
+   
+}
+.tdOperacao{
+    white-space: nowrap;
+    width: 20%;
+}
+.imgOp{
+    width:45%;
+    height:45%;
+}
+.tableProfessor{
+    width: 90%;
+    margin-left:5%;
+    margin-bottom:4%;
+}
+@media (max-width: 800px){
+    .tableProfessor{
+        margin-left:0%;
+        width:85%;
+    }
+  }

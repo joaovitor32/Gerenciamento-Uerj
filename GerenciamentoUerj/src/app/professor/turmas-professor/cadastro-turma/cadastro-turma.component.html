@@ -1,0 +1,41 @@
+<mat-dialog-content style="height: 450px;">
+    <mat-toolbar mat-dialog-title class="toolbarDialog">
+        <mat-toolbar-row>
+            <strong id="labelCad">Cadastro de Turma:</strong>
+            <span class="spacer"></span>
+                <img (click)="closeDialog()" class="closeRef" src="../../../../assets/close.svg">
+            </mat-toolbar-row>
+    </mat-toolbar>
+    <form class="formTurma" style="width:90%;" [formGroup]="formularioDados" (ngSubmit)="cadastraTurma()">
+        <div style="margin-bottom:2%;margin-left:6%">
+            <span class="inputTitle">Escolha o professor dessa turma:</span>
+            <mat-form-field class="inputForms">
+                <mat-select formControlName="codProfessor" >
+                    <mat-option *ngFor="let professor of professores" [value]="professor.codProfessor">
+                        {{professor.nome}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div style="margin-bottom:2%;margin-left:6%">
+            <span class="inputTitle">Escolha a disciplina dessa turma:</span>
+            <mat-form-field class="inputForms">
+                <mat-select formControlName="codDisciplina">
+                    <mat-option *ngFor="let disciplina of disciplinas" [value]="disciplina.codDisciplina">
+                        {{disciplina.nomeDisc}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div style="margin-left:6%">
+            <span class="inputTitle">Insira o período:</span>
+            <mat-form-field class="inputForms">
+                <input formControlName="periodo" [ngClass]="{ 'is-invalid': submitted && Form.periodo.errors }" matInput placeholder="Digite o periodo...." required/>
+            </mat-form-field>
+        </div>
+        <div mat-dialog-actions>
+            <span class="spacer"></span>
+            <button id="buttonCad" mat-button>Cadastro</button>
+        </div>
+    </form>
+</mat-dialog-content>

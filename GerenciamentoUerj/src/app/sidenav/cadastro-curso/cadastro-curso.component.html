@@ -1,0 +1,18 @@
+<mat-dialog-content>
+    <mat-toolbar mat-dialog-title class="toolbarDialog">
+        <mat-toolbar-row>
+            <strong id="labelCad">Cadastro de curso:</strong>
+            <span class="spacer"></span>
+                <img (click)="closeDialog()" class="closeRef" src="../../../assets/close.svg">
+            </mat-toolbar-row>
+    </mat-toolbar>
+    <form style="width:90%" [formGroup]="formularioCurso" (submit)="cadastrarCurso()">
+        <mat-form-field class="inputForms">
+            <input [ngClass]="{ 'is-invalid': submitted && Form.login1.errors }" formControlName="nomeCurso" matInput placeholder="Digite o curso...." required>
+        </mat-form-field>
+        <mat-dialog-actions>
+            <span class="spacer"></span>
+            <button id="buttonCad" mat-button>Cadastro</button>
+        </mat-dialog-actions>
+    </form>
+</mat-dialog-content>

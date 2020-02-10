@@ -1,0 +1,8 @@
+<div class="boxLoader" *ngIf="loading">
+  <app-load-spinner></app-load-spinner>
+</div>
+<mat-tab-group [ngStyle]="{'display': loading ? 'none':'block' }" mat-stretch-tabs>
+  <mat-tab label="Tabela"> <app-tabela-professor  ></app-tabela-professor> </mat-tab>
+  <mat-tab label="Cadastro"><app-cadastro-professor ></app-cadastro-professor> </mat-tab>
+  <mat-tab label="Turmas"><app-turmas-professor></app-turmas-professor></mat-tab>
+</mat-tab-group>

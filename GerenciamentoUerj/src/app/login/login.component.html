@@ -1,0 +1,16 @@
+<div fullscreen class="boxFormulario">
+    <div>
+        <img class="logoUerj" src="../../assets/logoUerj.png">
+    </div>
+    <form class="example-form" [formGroup]="formularioDados"  (ngSubmit)="fazerLogin()">
+        <mat-form-field class="inputForms" >
+            <input formControlName="login" type="text" placeholder="Insira o seu login..." matInput  >
+        </mat-form-field>
+        <mat-form-field class="inputForms" >
+            <input formControlName="senha" type="password" placeholder="Insira a sua senha..." matInput  >
+        </mat-form-field>
+        <button class="logButton" mat-button><strong>Entrar</strong></button>
+    </form>
+    <button (click)="openCadDialog()" class="cadButton" mat-button><strong>Cadastre-se</strong></button>  
+</div>
+<router-outlet></router-outlet>

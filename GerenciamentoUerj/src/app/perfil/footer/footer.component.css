@@ -1,0 +1,69 @@
+#boxFooter{
+    justify-content: center;
+    text-align: center;
+    margin-bottom:4%;
+}
+.boxLogoH6{
+    display: flex;
+    justify-content: center;
+    margin-top:1%;
+    margin-bottom:1%;
+}
+.logoUerj{
+    width: 75%;
+    height: 90%;
+    position: relative;
+    top: 5%;
+}
+.h4Title{
+    margin-top:4%;
+    color:gainsboro;
+}
+.logoh6{
+    width:3% ;
+    height:3% ;
+}
+
+.h6SubTitle{
+    position: relative;
+    top:50%;
+    transform: translateY(10%); 
+    left:2%;
+    color:gainsboro;
+}
+.logo{
+    width: 65%;
+    height: 65%;
+    margin-top:1%;
+    margin-bottom:6%;
+}
+ul {
+    display: inline-flex!important;
+    width: 26%!important;
+} 
+ul li { 
+    list-style: none;
+    display: inline;
+}
+@media (max-width: 800px){
+   .logoUerj{
+       margin:0 auto;
+       display: block;
+       top:4%;
+       width: 45%;
+       height: 95%;
+   }
+   .logoh6{
+        width:6% ;
+        height:8% ;
+        transform: translateY(4%); 
+    }
+    ul {
+        display: inline-flex;
+        width: 100%!important;
+    } 
+    .logo{
+        width: 50%;
+        height: 50%;
+    }
+}

@@ -1,0 +1,145 @@
+<router-outlet></router-outlet>
+<div class="boxLoader" *ngIf="loading">
+  <app-load-spinner></app-load-spinner>
+</div>
+<div [ngStyle]="{'display': loading ? 'none':'block' }" style="overflow-y: auto;height: 90%;" #sectionPerfil>
+  <section >
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="card"  >
+                      <div class="card-inner" >
+                        <div class="card-left">
+                          <div #dadosUser class="boxInfoLeft">
+                                <div class="parent" >
+                                  <!-------
+                                    
+                                    
+                                    https://stackoverflow.com/questions/1077041/refresh-image-with-a-new-one-at-the-same-url
+                                    
+                                    ------->
+                                  <img  class="imgPerfilUser" src="../../../../api/fotoPerfil/{{codPerfilFoto}}.jpg">
+                                  <img (click)=" changeFlip()" [ngClass]="flip ? 'flipArrowRight':'flipArrowLeft'" class="arrowUpdate" src="../../assets/next.svg" />
+                                </div>
+                                <div class="boxUser" *ngFor="let user of userData">
+                                    <div style="margin-top:3%;margin-bottom:2%;">
+                                        <strong class="labelInfoUser" style="font-size:1.2em">{{user.nome}}</strong>
+                                    </div>
+                                    <label class="labelInfoUser">Matrícula: {{user.matricula}}</label>
+                                    <label class="labelInfoUser">Ano de ingresso: {{user.anodeentrada| date:'dd/MM/yyyy' }}</label>
+                                    <label class="labelInfoUser">Data de nascimento: {{user.datanascimento| date:'dd/MM/yyyy' }}</label>
+                                    <label class="labelInfoUser">Curso: {{user.curso}}</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-right" [ngClass]="flip ? 'flipBoxRight':'flipBoxLeft'">
+                            <div class="boxInfoLeft">
+                                <h4 style="color:#DCDCDC;margin-top:1%;margin-bottom:4%">Atualização de dados:</h4>
+                                <form enctype="multipart/form-data" [formGroup]="formularioDados" (submit)="updateUsuario()" >
+                                  <div class="divUpdate">
+                                    <label class="labelUpdate">Login:</label>
+                                    <input class="inputUpdate" formControlName="login" type="text" placeholder="Digite seu nome..." required/>
+                                  </div>
+                                  <div class="divUpdate">
+                                    <label class="labelUpdate">Senha:</label>
+                                    <input class="inputUpdate" formControlName="senha" type="password" type="password" placeholder="Digite a senha..." required/>
+                                  </div>
+                                  <div class="divUpdate">
+                                    <label class="labelUpdate">Nome:</label>
+                                    <input class="inputUpdate" formControlName="nome" type="text" placeholder="Digite o nome..." required/>
+                                  </div>
+                                  <div class="divUpdate">
+                                    <label class="labelUpdate">Matrícula:</label>
+                                    <input class="inputUpdate" type="text" formControlName="matricula" placeholder="Digite a matrícula..." required />
+                                  </div>
+                                  <div class="divUpdate">
+                                    <label class="labelUpdate">Ano de ingresso:</label>
+                                    <input class="inputUpdate" type="date" formControlName="anoDeIngresso" required />
+                                  </div>
+                                  <div class="divUpdate">
+                                    <label class="labelUpdate">Nascimento:</label>
+                                    <input class="inputUpdate" formControlName="nascimento" type="date" />
+                                  </div>
+                                  <div class="divUpdate">
+                                    <label class="labelUpdate">Curso:</label>
+                                    <select class="selectCurso" formControlName="curso">
+                                      <option *ngFor="let curso of cursos" value="{{curso.codCurso}}">{{curso.curso}}</option>
+                                    </select> 
+                                  </div>
+                                  <div class="divUpdate">
+                                    <label class="labelUpdate">Foto:</label>
+                                    <input class="inputUpdate" (change)="getFoto($event)" formControlName="foto" type="file"  placeholder="Insira a foto...." required />
+                                  </div>
+                                  <button type="submit" id="buttonForm">Atualizar</button>
+                                </form>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+              <div class="col-md-8" [ngClass]="flip ? 'tableIndexMinus':'tableIndexPlus'" >
+                <div class="tabPerfil">
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                        <ng-container matColumnDef="nome">
+                          <th mat-header-cell *matHeaderCellDef> Nome: </th>
+                          <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+                        </ng-container>
+                      
+                        <ng-container matColumnDef="nomeDisc">
+                          <th mat-header-cell *matHeaderCellDef> Disciplina: </th>
+                          <td mat-cell *matCellDef="let element"> {{element.nomeDisc}} </td>
+                        </ng-container>
+                      
+                        <ng-container matColumnDef="media">
+                          <th mat-header-cell *matHeaderCellDef> Média: </th>
+                          <td mat-cell *matCellDef="let element"> {{element.media}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="periodo">
+                          <th style="padding-left:3%" mat-header-cell *matHeaderCellDef> Período: </th>
+                          <td mat-cell *matCellDef="let element"> {{element.periodo}} </td>
+                        </ng-container>
+
+                        <ng-container  matColumnDef="ementa">
+                            <th style="padding-left:4%;" mat-header-cell *matHeaderCellDef> Ementa: </th>
+                            <td  mat-cell *matCellDef="let element"> {{element.ementa}} </td>
+                        </ng-container>
+                        
+                        <ng-container matColumnDef="operacoes">
+                            <th mat-header-cell *matHeaderCellDef> Operações: </th>
+                            <td mat-cell *matCellDef="let element"> 
+                              <button  class="buttonOp"  mat-button (click)="deleteUsuarioTurma(element.codTurma,element.media)">
+                                  <img class="imgOp" src="../../assets/close.svg">
+                              </button> </td>
+                        </ng-container>
+                        
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                      </table>
+                    </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <section #alturaCadPerfilTurma>
+    <app-cadastro-perfil-turma></app-cadastro-perfil-turma>
+  </section>  
+  <section style="margin-top:2%;" >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="text-align: center;">
+            <h3 style="color:#113d63">Análise das notas:</h3>
+        </div>
+      </div>
+      <div  class="row">
+        <div class="col-md-6"><app-notas-qtd style="margin-bottom:2%"></app-notas-qtd></div>
+        <div [@fadeCR]="state" style="opacity: 0;" class="col-md-6" ><app-cr></app-cr></div>
+      </div>
+    </div>
+  </section>
+  <section class="footer">
+    <app-footer></app-footer>
+  </section>
+</div >
+<router-outlet></router-outlet>

@@ -1,0 +1,122 @@
+.formCadTurmaPerfil{
+    margin-top:3%;
+    margin-left:1%;
+    background-color:#113d63;
+    height: 120px;
+    border-radius:10px;
+}
+
+.h6TitleAddTurma{
+  font-weight:bold;
+  color:white;
+  margin-top:2%;
+  margin-bottom:3%;
+  text-align: center;
+}
+/*-----------Boxes--------------*/
+#containerBoxes{
+  width: 100%;
+  height:100%;
+}
+#leftbox { 
+  float:left;  
+  background:#113d63; 
+  width:25%;  
+} 
+#middlebox{ 
+  float:left;  
+  background:#113d63; 
+  width:50%;  
+} 
+#rightbox{ 
+  float:right; 
+  background:#113d63; 
+  width:25%;  
+  text-align:center;
+} 
+/*-------Input media----------*/
+::-webkit-input-placeholder { /* Edge */
+  color: white;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+::placeholder {
+  color: white;
+}
+.inputMedia{
+  background-color:transparent;
+  border:none;
+  outline:none;
+  color:white;
+  margin-left:4rem;
+  margin-top:1%;
+}
+/*------------Select---------------*/ 
+#containerBoxMiddle{
+  margin-left:1.5rem;
+}
+#leftMiddleBox{
+  float:left;  
+  width:20%;
+  margin-top:1%;
+}                           
+#rightMiddlebox{
+  float:right;  
+  width:80%;
+  margin-top:1%;
+  
+}
+#turmaStrong{
+  color:white;
+  white-space: nowrap;
+}
+#selectTurma{
+  width:90%;
+  margin-left:1rem;
+  background: #113d63;
+  color:white;
+  border:1px solid white;
+}
+/*-----------Button---------------*/
+
+#btnCadastro{
+  color:white;
+  background-color:#113d63;
+  border:1px solid white;
+  border-radius:10px;
+  padding-top:1%;
+  padding-bottom:1%;
+  padding-left:5%;
+  padding-right:5%;
+}
+/*-------Responsividade----------*/
+@media (max-width: 800px){
+
+  #leftbox,#middlebox,#rightbox{
+    clear: both;
+    width: 100%;
+    border-radius: 0px;
+  } 
+  #rightMiddlebox{
+    width: 65%;
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    padding-right:4%;
+  }
+  .inputMedia{
+    margin-bottom:2%;
+  }
+  #turmasStrong,#selectTurma{
+    margin-bottom:2%;
+  }
+  #btnCadastro{
+    margin-top:4%;
+    margin-bottom:4%;
+  }
+  .formCadTurmaPerfil{
+    height: 150px;
+    border-radius:0px;
+  }
+}

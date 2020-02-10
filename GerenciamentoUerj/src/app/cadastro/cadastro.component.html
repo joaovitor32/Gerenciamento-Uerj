@@ -1,0 +1,53 @@
+<mat-dialog-content>
+    <mat-toolbar mat-dialog-title class="toolbarDialog">
+        <mat-toolbar-row>
+            <strong id="labelCad">Cadastro de Usuário:</strong>
+            <span class="spacer"></span>
+                <img (click)="closeDialog()" class="closeRef" src="../../../assets/close.svg">
+            </mat-toolbar-row>
+    </mat-toolbar>
+    <form enctype="multipart/form-data" style="width:90%" [formGroup]="formularioDados" (submit)="cadastroUsuario()">
+        <mat-form-field class="inputForms">
+            <input [ngClass]="{ 'is-invalid': submitted && Form.login1.errors }" formControlName="login1" matInput placeholder="Digite o login...." required>
+        </mat-form-field>
+        <mat-form-field class="inputForms">
+            <input [ngClass]="{ 'is-invalid': submitted && Form.nome.errors }" formControlName="nome" matInput placeholder="Digite o nome...." required>
+        </mat-form-field>
+        <mat-form-field class="inputForms">
+            <input [ngClass]="{ 'is-invalid': submitted && Form.senha.errors }" formControlName="senha" type="password" matInput placeholder="Digite a senha...." required>
+        </mat-form-field>
+        <mat-form-field class="inputForms">
+            <input [ngClass]="{ 'is-invalid': submitted && Form.matricula.errors }" formControlName="matricula" matInput placeholder="Digite a matrícula...." required>
+        </mat-form-field>
+        <mat-form-field class="inputForms">
+            <input matInput [ngClass]="{ 'is-invalid': submitted && Form.dataNascimento.errors }" formControlName="dataNascimento" [matDatepicker]="picker" placeholder="Insira a data de nascimento..." required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="inputForms">
+            <input matInput [ngClass]="{ 'is-invalid': submitted && Form.anoEntrada.errors }"  formControlName="anoEntrada" [matDatepicker]="picker1" placeholder="Insira o ano de entrada" required>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1 startView="year" [startAt]="startDate"></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="inputForms">
+            <mat-label>Curso:</mat-label>
+                <mat-select formControlName="codCurso">
+                  <mat-option  *ngFor="let curso of cursos" [value]="curso.codCurso">
+                    {{curso.curso}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+            <input [ngClass]="{ 'is-invalid': submitted && Form.foto.errors }" class="inputForms" style="margin-top:2%;margin-bottom:4%;" (change)="getFoto($event)" formControlName="foto" type="file"  placeholder="Insira a foto...." required>
+    
+        <div class="boxFoto" *ngIf="srcImage" >
+            <div style="margin-left:2rem">
+                <h6 style="color:#113d63">Imagem escolhida:</h6 >
+                <img class="foto" src="{{srcImage}}"/>
+            </div>
+        </div>
+        <mat-dialog-actions>
+            <span class="spacer"></span>
+            <button id="buttonCad" mat-button>Cadastro</button>
+        </mat-dialog-actions>
+    </form>
+</mat-dialog-content>

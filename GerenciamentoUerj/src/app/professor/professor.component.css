@@ -1,0 +1,17 @@
+.mat-tab-labels, .mat-tab-label, .mat-tab-link {
+    color: #113d63;;
+    font-size: 16px;
+    background-color: lightgrey;
+  }
+  
+  .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+    background: #113d63;
+    height: 5px; 
+  }
+
+/*----------------------------------------------------------*/
+.boxLoader{
+  width: 100%;
+  height:100%;
+  transform: translateY(25%);
+}

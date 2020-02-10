@@ -1,0 +1,38 @@
+<mat-dialog-content style=" height:600px" >
+    <mat-toolbar mat-dialog-title class="toolbarDialog">
+        <mat-toolbar-row>
+            <strong class="spanTop">Atualização de dados:</strong>
+            <span class="spacer"></span>
+                <img (click)="closeDialog()" class="closeRef" src="../../../assets/close.svg">
+            </mat-toolbar-row>
+    </mat-toolbar>
+    <form class="formDisciplinas" [formGroup]="formularioDados" (ngSubmit)="changeData()">
+        
+            <mat-form-field >
+                <input class="inputForms" formControlName="nomeDisc" type="text" matInput placeholder="Insira o novo nome...">
+            </mat-form-field>
+    
+            <mat-form-field >
+                <input class="inputForms" formControlName="credito" type="number" matInput placeholder="Insira o número de créditos...">
+            </mat-form-field>
+        
+            <mat-form-field >
+                <input class="inputForms" formControlName="ementa" type="text" matInput placeholder="Insira a nova ementa...">
+            </mat-form-field>
+    
+           <mat-form-field class="inputForms">
+                <mat-label>Curso:</mat-label>
+                <mat-select formControlName="codCurso">
+                    <mat-option *ngFor="let curso of cursos" [value]="curso.codCurso">
+                        {{curso.curso}}
+                    </mat-option>
+                </mat-select>
+           </mat-form-field> 
+        
+            <mat-dialog-actions >
+                <span class="spacer"></span>
+                <button class="changeDataButton" mat-button><strong>Mudar dados</strong></button>
+            </mat-dialog-actions>
+    
+    </form>
+</mat-dialog-content>

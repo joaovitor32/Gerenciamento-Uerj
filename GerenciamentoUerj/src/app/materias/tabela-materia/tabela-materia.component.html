@@ -1,0 +1,36 @@
+<mat-form-field style=" width: 90%;margin-left:5%;margin-top:2%;">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Insira o nome da disciplina...">
+  </mat-form-field>
+  <table style=" width: 90%;margin-left:5%;margin-bottom:4%;" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="nomeDisc">
+      <th mat-header-cell *matHeaderCellDef> Disciplina: </th>
+      <td mat-cell *matCellDef="let element"> {{element.nomeDisc}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="ementa">
+      <th mat-header-cell *matHeaderCellDef> Ementa: </th>
+      <td mat-cell *matCellDef="let element"> {{element.ementa}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="credito">
+      <th mat-header-cell *matHeaderCellDef> Crédito: </th>
+      <td mat-cell *matCellDef="let element"> {{element.credito}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="operacoes">
+      <th mat-header-cell *matHeaderCellDef>Operações</th>
+      <td class="tdOperacao" mat-cell *matCellDef="let element"> 
+        <button  class="buttonOp"  mat-button (click)="changeData(element.codDisciplina)">
+          <img class="imgOp" src="../../assets/update.svg">
+        </button>
+        <button class="buttonOp" mat-button (click)="deleteDisciplina(element.codDisciplina)">
+          <img class="imgOp"  src="../../assets/close.svg">
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

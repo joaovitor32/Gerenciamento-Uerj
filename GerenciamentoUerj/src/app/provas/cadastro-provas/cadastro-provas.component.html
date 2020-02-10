@@ -1,0 +1,37 @@
+<mat-dialog-content>
+    <mat-toolbar mat-dialog-title class="toolbarDialog">
+        <mat-toolbar-row>
+            <strong id="labelCad">Cadastro de provas:</strong>
+            <span class="spacer"></span>
+                <img (click)="closeDialog()" class="closeRef" src="../../../assets/close.svg">
+            </mat-toolbar-row>
+    </mat-toolbar>
+    <div style="margin-left:4%;margin-top:2%">
+        <strong>Data: {{data | date: 'dd/MM/yyyy'}}</strong>
+        <form  [formGroup]="deleteEvent" (ngSubmit)="deleteProvas()">
+            <button id="btnDelete" >Deletar eventos</button>
+        </form>
+    </div>
+    <hr style="width: 95%;border:1px solid #113d63">
+    <div style="position:center">
+        <p id="strongAdd">Adicionar prova:</p>
+        <form style="width:90%" [formGroup]="formularioCadastroProva" (ngSubmit)="cadastrarProva()" >
+            <strong class="strongMatField">Digite o título:</strong>
+            <mat-form-field>
+                <input formControlName="title" matInput placeholder="Insira o título...">
+            </mat-form-field>
+            <strong class="strongMatField">Entra com a turma:</strong>
+            <mat-form-field >
+                <mat-select formControlName="codTurma">
+                    <mat-option  *ngFor="let turma of turmas" [value]="turma.codTurma">
+                        {{turma.nomeDisc}} - {{turma.nome}} - {{turma.periodo}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-dialog-actions>
+                <span class="spacer"></span>
+                <button id="buttonCad" mat-button>Cadastro</button>
+            </mat-dialog-actions>
+        </form>
+    </div>
+</mat-dialog-content>

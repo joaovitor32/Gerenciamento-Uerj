@@ -1,0 +1,36 @@
+form{
+    width: 60%;
+    margin-top:5%;
+    margin-left:auto;
+    margin-right:auto
+}
+.btnCad{
+    display:block;
+    margin:0 auto;
+    color:#113d63;
+    font-size:1.4em;
+    width: 15%;
+    border-radius:10px;
+    background-color:white;
+    border:1px solid #113d63;
+}
+.btnCad:hover{
+    transition:1s;
+    -o-transition:1s;
+    -moz-transition:1s;
+    -webkit-transition:1s;
+    color:white;
+    background-color:#113d63;
+}
+label{
+   color: #113d63;
+   font-weight: bold;
+   font-size:1.1em;
+}
+
+@media (max-width: 800px){
+    .btnCad{
+        font-size:1.1em;
+        width: 50%;
+    }
+}

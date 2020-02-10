@@ -1,0 +1,25 @@
+.buttonOp{
+    background: none;
+    margin-left: 0%;
+    padding:0%;
+    width:10%;
+    display:inline-block;
+   
+}
+.tdOperacao{
+    white-space: nowrap;
+    width: 20%;
+}
+.imgOp{
+    width:45%;
+    height:45%;
+}
+.mat-column-ementa{
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+}
+@media only screen and (max-width: 700px) {
+    .mat-column-credito{
+        padding:2
+    }
+}

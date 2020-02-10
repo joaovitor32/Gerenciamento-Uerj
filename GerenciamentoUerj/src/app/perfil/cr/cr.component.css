@@ -1,0 +1,10 @@
+.crContainer{
+    text-align: center;
+    background-color:rgba(211,211,211,0.60);
+    padding:4%;
+    margin-top:6%;
+    border-radius:10px;
+}
+.crRow{
+    margin-top:6%;
+}

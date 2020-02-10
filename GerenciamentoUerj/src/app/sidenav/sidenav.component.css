@@ -1,0 +1,94 @@
+* {
+  --primaryColor:#113d63;
+  --secondaryColor:gainsboro;
+  --tertiaryColor:#ff2800;
+}
+
+.spanTop{
+  color:gainsboro;
+  margin-left:4%
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+  z-index: 1;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+
+}
+mat-sidenav-container{
+  height: 100%;
+}
+mat-sidenav{
+  background-color: var(--primaryColor)!important;
+  border-right: var(--secondaryColor) 3px solid;
+  width: 210px;
+}
+mat-toolbar{
+  background-color: var(--primaryColor)!important;
+  width: 210px;
+
+}
+.routerSidenav{
+  color:var(--secondaryColor);
+}
+.iconProfessor{
+  width:45%;
+  height: 50%;
+}
+.spanLinkSidenav{
+  color:var(--secondaryColor);
+  font-size:1.1em;
+  margin-left:12%;
+  margin-top:3%;
+}
+
+.dadosUser{
+  text-align: center;
+  margin-top:14%;
+ 
+}
+/*-------------Cadastro de curso---------------*/
+#buttonMenu{
+  outline:none;
+  color:#dcdcdc;
+  font-weight: bold;
+  background-color: transparent;
+  border:none;
+  font-size:0.7em;
+  margin-left:2%
+}
+#nomeCurso{
+  color:white;
+}
+.logout{
+  margin-right: 0%;
+  width: 3%;
+  height: 3%;
+}
+@media (max-width: 800px){
+  .spanTop{
+    font-size: 0.6em;
+  }
+  .menuIcone{
+    margin-left:-6%;
+  }
+  #buttonMenu{
+    font-size:0.5em;
+    margin-left:3rem;
+
+  }
+  .logout{
+    width: 0%;
+    height: 8%;
+  }
+}
+
+

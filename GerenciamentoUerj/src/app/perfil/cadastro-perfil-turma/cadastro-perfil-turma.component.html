@@ -1,0 +1,38 @@
+<div class="container" >
+    <div class="row">
+        <div class="col-md-12">
+            <div class="formCadTurmaPerfil">
+                <form [formGroup]="formularioPerfilTurma"  (ngSubmit)="cadastroPerfilTurma()" >
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12" >
+                                <h6 class="h6TitleAddTurma">Adicionar matéria e turma cursadas ao histórico:</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="containerBoxes">
+                        <div id = "leftbox"> 
+                            <input class="inputMedia" formControlName="media" placeholder="Insira a média...">
+                        </div>  
+                        <div id = "middlebox"> 
+                            <div id="containerBoxMiddle">
+                                <div id = "leftMiddleBox"> 
+                                    <strong id="turmaStrong">Insira a turma: </strong>
+                                </div>
+                                <div id = "rightMiddlebox"> 
+                                    <select id="selectTurma" formControlName="codTurma">
+                                        <option *ngFor="let tu of turma" value="{{tu.codTurma}}">{{tu.nome}} - {{tu.nomeDisc}} - {{tu.periodo}}</option>
+                                    </select> 
+                                </div>        
+                            </div> 
+                        </div>
+                        <div id = "rightbox"> 
+                            <button id="btnCadastro">Cadastro</button>         
+                        </div> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,81 @@
+strong{
+    color:#113d63;
+    float:left;
+    font-size:1.05em;
+    margin-top:0.2%;
+}
+.spacer {
+    flex: 1 1 auto;
+}
+.toolbarDialog{
+    background-color:#113d63;
+
+}
+.closeRef{
+    width: 4%;
+}
+.mat-dialog-content {
+    padding:0px;
+    margin-top:-5%;
+    overflow-y: hidden;
+    overflow-x:hidden;
+    height: 420px;
+}
+#labelCad{
+    color:white;
+    font-size:1.2em
+}
+#btnDelete{
+    background-color:white;
+    color:#113d63;
+    font-size:1em;
+    font-weight: bold;
+    margin-left: 2%;
+    border-radius:10px;
+    outline:none;
+    border:1px solid #113d63;
+}
+#strongAdd{
+    color:#113d63;
+    font-weight: bold;
+    font-size:1.2em;
+    text-align:center;
+    margin-top:1%;
+
+}
+/*-------------Formulário---------------*/
+.mat-form-field{
+    width: 96%;
+    margin-left:5%;
+}
+.mat-option{
+    color:#113d63;
+}
+.strongMatField{
+    font-size: 0.8em;
+    margin-left:5%;
+    top:5%;
+}
+#buttonCad{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color:#113d63;
+    font-size:1.2em;
+    border:1px solid #113d63;
+}
+#buttonCad:hover{
+    transition:1s;
+    -o-transition:1s;
+    -moz-transition:1s;
+    -webkit-transition:1s;
+    color:gainsboro;
+    background-color:#113d63
+}
+
+@media only screen and (max-width: 700px) {
+    .mat-dialog-content{
+        margin-top: -10%;
+    }
+
+}

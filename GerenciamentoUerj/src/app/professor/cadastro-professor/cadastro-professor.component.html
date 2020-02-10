@@ -1,0 +1,11 @@
+<form  [formGroup]="formularioCadProfessor" (ngSubmit)="cadastrarProfessor()">
+    <div class="form-group">
+        <label>Nome:</label>
+        <input  [ngClass]="{ 'is-invalid': submitted && Form.nome.errors }" formControlName="nome"  type="text" class="form-control" placeholder="Digite o nome...">
+    </div>
+   <div class="form-group">
+        <label >Grande área:</label>
+        <textarea [ngClass]="{ 'is-invalid': submitted && Form.grandeArea.errors }" formControlName="grandeArea" class="form-control"  rows="4"></textarea>
+    </div>
+    <button  type="submit" class="btnCad">Cadastrar</button>
+</form>

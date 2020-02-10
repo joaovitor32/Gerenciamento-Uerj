@@ -1,0 +1,59 @@
+.spacer {
+    flex: 1 1 auto;
+}
+.toolbarDialog{
+    background-color:#113d63;
+}
+.closeRef{
+    width: 4%;
+}
+.spanTop{
+    color:white;
+    font-size:1.3em
+}
+mat-dialog-content{
+    padding:0px;
+    margin-top:-5%;
+    overflow-y: hidden;
+    height: 800px;
+}
+.mat-form-field{
+    width: 90%;
+}
+.inputForms{
+    margin-left:2%;
+}
+.formDisciplinas{
+    width: 90%;
+    margin-left:8%;
+    margin-top:6%;
+    height:100%;
+}
+.changeDataButton{
+    margin-left:auto;
+    margin-right: auto;
+    color:#113d63;
+    font-size:1.2em;
+    border:1px solid #113d63;
+}
+.changeDataButton:hover{
+    transition:1s;
+    -o-transition:1s;
+    -moz-transition:1s;
+    -webkit-transition:1s;
+    color:gainsboro;
+    background-color:#113d63
+}
+
+@media only screen and (max-width: 700px) {
+    .mat-dialog-content{
+        margin-top: -10%;
+    }
+    .spanTop{
+        font-size:0.9em;
+    }
+    .formDisciplinas{
+        margin-top:0%;
+        width: 80%;
+    }
+}
