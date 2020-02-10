@@ -1,4 +1,4 @@
-<h2>Sistema de gerenciamendo de alunos, professores, notas e turmas baseadas no curso - Tecnologias: PHP, Angular e MVC</h2>
+<h4>Sistema de gerenciamendo de alunos, professores, notas e turmas baseadas no curso - Tecnologias: PHP, Angular e MVC</h4>
 
 
 # GerenciamentoUerj
