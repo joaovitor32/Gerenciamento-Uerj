@@ -3,7 +3,7 @@
 
 <h3>https://www.youtube.com/watch?v=QabkqbIveak</h3>
 
-# GerenciamentoUerj
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.9.
 
